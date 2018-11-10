@@ -7,20 +7,21 @@ It is implemented as a theme for LaTeX poster class
 [beamer](https://www.ctan.org/pkg/beamer), so you should probably
 have a look at its manual.
 
+## Packages
+
+    sudo apt install texlive-latex-recommended texlive-bibtex-extra biber
+
 ## Usage
 
-Have a look at the [example_presentation.tex](example_presentation.tex) file for
-how to use this class.
+Have a look at the [slides.tex](slides.tex) file for how to use this class.
 
 Currently the code can only be build using
 [LuaLaTeX](https://www.ctan.org/pkg/lualatex-doc), so make sure you have that
 installed.
-For compilation [latexmk](https://www.ctan.org/pkg/latexmk/) is recommended, if
+For compilation [stu](https://github.com/kunegis/stu) is recommended, if
 you have it installed you just have to perform:
 
-    git clone https://github.com/Institute-Web-Science-and-Technologies/WeSTpresentation.git
-    cd WeSTpresentation
-    latexmk
+    stu
 
 Of course you can also compile this class by calling `lualatex` manually.
 

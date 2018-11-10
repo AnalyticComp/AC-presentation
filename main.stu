@@ -1,0 +1,20 @@
+#
+# Stu file for generating the slides from LaTeX.
+#
+
+@all: slides.pdf;
+
+slides.pdf:  slides.tex refs.bib
+{
+    rm -rf *.aux *.lo? *.out *.bbl *.brf *.blg *.nl? *.ilg *.toc
+    lualatex -shell-escape -file-line-error -halt-on-error slides.tex
+    biber slides
+    lualatex -shell-escape -file-line-error -halt-on-error slides.tex
+    lualatex -shell-escape -file-line-error -halt-on-error slides.tex
+}
+
+@clear:
+{
+    rm -rf *.aux *.lo? *.out *.bbl *.brf *.blg *.nl? *.ilg *.toc *.bcf *.nav *.run.xml *.snm
+    rm -rf slides.pdf
+}

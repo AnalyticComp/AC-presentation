@@ -5,7 +5,7 @@
 % Document Class
 
 \LoadClass[
-  12pt, % Don't put to much stuff on a slide. Decrease this if you must.
+  12pt, % Do not put to much stuff on a slide. Decrease this if you must.
   compress, % Show all frames of a section in a single row if a navbar exists
 ]{beamer}
 
@@ -83,7 +83,7 @@
 % Show navigational bar on the top with little circles for each slide.
 % (We redefine the relevant themes later, but we need this theme for spacing.)
 \useoutertheme[
-  subsection = false, % Don't leave a separate line to name subsections.
+  subsection = false, % Do not leave a separate line to name subsections.
   footline = authorinstitute, % Show author and institute in a footline.
 ]{miniframes}
 
@@ -96,7 +96,7 @@
 
 % Fonts ------------------------------------------------------------------------
 
-\usefonttheme{professionalfonts} % Don't do some math font replacements.
+\usefonttheme{professionalfonts} % Do not do some math font replacements.
 \setsansfont{TeX Gyre Heros} % Sans-serif
 
 \setbeamerfont{title}{series = \bfseries} % Make title of titlepage bold.
@@ -308,11 +308,11 @@
   \let\ifhadanonsubsecn\@secondoftwo
 }{}{\@error{unable to patch \string\sectionentry}{}}
 
-\patchcmd\slideentry{%
-  \ifnum#2>0%
-}{%
-  \ifnum2>0%
-}{}{\@error{unable to patch \string\slideentry}{}}
+%\patchcmd\slideentry{%
+%  \ifnum#2>0%
+%}{%
+%  \ifnum2>0%
+%}{}{\@error{unable to patch \string\slideentry}{}}
 
 \patchcmd\slideentry{%
   \beamer@xpos=#3\relax%
@@ -394,7 +394,7 @@
 \algrenewcommand\algorithmicthen{\AlgKeyword{then}}
 \algrenewcommand\algorithmicelse{\AlgKeyword{else}}
 \algrenewcommand\algorithmicrequire{\AlgKeyword{Input:}} % change "Require" to "Input"
-\algrenewcommand\algorithmicensure{\AlgKeyword{Output:}} % change "Ensure" to "Output'
+\algrenewcommand\algorithmicensure{\AlgKeyword{Output:}} % change "Ensure" to "Output"
 \algrenewcommand\algorithmicreturn{\AlgKeyword{return}}
 
 % Style for identifiers

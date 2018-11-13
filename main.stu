@@ -6,11 +6,11 @@
 
 slides.pdf:  slides.tex refs.bib
 {
-    rm -rf *.aux *.lo? *.out *.bbl *.brf *.blg *.nl? *.ilg *.toc
-    lualatex -shell-escape -file-line-error -halt-on-error slides.tex
+    rm -rf *.aux *.lo? *.out *.bbl *.brf *.blg *.nl? *.ilg *.toc *.bcf *.nav *.run.xml *.snm
+    pdflatex -shell-escape -file-line-error -halt-on-error slides.tex
     biber slides
-    lualatex -shell-escape -file-line-error -halt-on-error slides.tex
-    lualatex -shell-escape -file-line-error -halt-on-error slides.tex
+    pdflatex -shell-escape -file-line-error -halt-on-error slides.tex
+    pdflatex -shell-escape -file-line-error -halt-on-error slides.tex
 }
 
 @clear:

@@ -19,10 +19,12 @@
 %\renewcommand*\WeSTfootlineLeft{left footline content}
 %\renewcommand*\WeSTfootlineCenter{center footline content}
 
-% Set langauge of text.
-\setdefaultlanguage[
-  variant = american, % Use American instead of Britsh English.
-]{english}
+\ifluatex
+    % Set langauge of text.
+    \setdefaultlanguage[
+      variant = american, % Use American instead of Britsh English.
+    ]{english}
+\fi
 
 % Specify bib file location.
 \addbibresource{refs.bib}

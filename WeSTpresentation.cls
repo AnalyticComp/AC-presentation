@@ -17,20 +17,25 @@
   \RequirePackage{#2}
 }
 
-% Language typesetting.
-\RequirePackage{polyglossia}
+\RequirePackage{ifluatex}
+\ifluatex
+    % Lua(La)TeX
+    % Language typesetting.
+    \RequirePackage{polyglossia}
 
-% Font selection.
-\RequirePackage{fontspec}
+    % Font selection.
+    \RequirePackage{fontspec}
+    \setsansfont{TeX Gyre Heros} % Sans-serif
+
+    % Unicode support for math. Load after other math/font packages.
+    \RequirePackage{unicode-math}
+
+    % Patches a few math packages to work correctly with LuaLaTeX.
+    \RequirePackage{lualatex-math}
+\fi
 
 % Micro-typographic extensions.
 \RequirePackage{microtype}
-
-% Unicode support for math. Load after other math/font packages.
-\RequirePackage{unicode-math}
-
-% Patches a few math packages to work correctly with LuaLaTeX.
-\RequirePackage{lualatex-math}
 
 % Various useful tools for mathematical typesetting.
 \RequirePackage{mathtools}
@@ -97,7 +102,6 @@
 % Fonts ------------------------------------------------------------------------
 
 \usefonttheme{professionalfonts} % Do not do some math font replacements.
-\setsansfont{TeX Gyre Heros} % Sans-serif
 
 \setbeamerfont{title}{series = \bfseries} % Make title of titlepage bold.
 \setbeamerfont{subtitle}{series = {}} % Make subtitle of titlepage normal.

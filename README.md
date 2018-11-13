@@ -7,9 +7,13 @@ It is implemented as a theme for LaTeX poster class
 [beamer](https://www.ctan.org/pkg/beamer), so you should probably
 have a look at its manual.
 
+- Now also supports pdfLaTeX (default).
+
 ## Packages
 
     sudo apt install texlive-latex-recommended texlive-bibtex-extra biber
+
+Or simply install vanilla TeXLive (recommended).
 
 ## Usage
 
@@ -33,8 +37,8 @@ pull requests are always welcome.
 Bugs:
 
 - Have better example content.
+- Fonts are not exactly the same when compiled with different engines.
 
 Additional Features:
 
 - Support Beamer's Handout feature.
-- Support other latex engines (`pdftex`, etc).

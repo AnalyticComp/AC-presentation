@@ -19,15 +19,13 @@ Or simply install vanilla TeXLive (recommended).
 
 Have a look at the [slides.tex](slides.tex) file for how to use this class.
 
-Currently the code can only be build using
-[LuaLaTeX](https://www.ctan.org/pkg/lualatex-doc), so make sure you have that
-installed.
+The code can be build using pdfLaTeX or luaLaTeX.
 For compilation [stu](https://github.com/kunegis/stu) is recommended, if
 you have it installed you just have to perform:
 
     stu
 
-Of course you can also compile this class by calling `lualatex` manually.
+Of course you can also compile this class by calling `pdflatex` or `lualatex` manually.
 
 ## ToDo
 

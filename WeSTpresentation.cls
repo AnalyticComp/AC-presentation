@@ -3,7 +3,8 @@
 
 % ==============================================================================
 % Document Class
-
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{beamer}}
+\ProcessOptions\relax
 \LoadClass[
   12pt, % Do not put to much stuff on a slide. Decrease this if you must.
   compress, % Show all frames of a section in a single row if a navbar exists

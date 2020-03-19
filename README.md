@@ -7,8 +7,6 @@ It is implemented as a theme for LaTeX poster class
 [beamer](https://www.ctan.org/pkg/beamer), so you should probably
 have a look at its manual.
 
-- Now also supports pdfLaTeX (default).
-
 ## Packages
 
     sudo apt install texlive-latex-recommended texlive-bibtex-extra biber
@@ -28,6 +26,16 @@ you have it installed you just have to perform:
     stu
 
 Of course you can also compile this class by calling `lualatex` manually.
+
+## Changelog
+
+- 2018-12-12
+
+Now also supports pdfLaTeX (default).
+
+- 2020-03-19
+
+Now it passes options to the base class `beamer`. For instance use `aspectratio=169` to set the ratio to 16:9.
 
 ## ToDo
 

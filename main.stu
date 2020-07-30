@@ -2,9 +2,9 @@
 # Stu file for generating the slides from LaTeX.
 #
 
-@all: slides.pdf;
+@all: slides.pdf slides_wide.pdf;
 
-slides.pdf:  slides.tex refs.bib
+slides.pdf:  slides.tex refs.bib WeSTpresentation.cls
 {
     rm -rf *.aux *.lo? *.out *.bbl *.brf *.blg *.nl? *.ilg *.toc *.bcf *.nav *.run.xml *.snm
     pdflatex -shell-escape -file-line-error -halt-on-error slides.tex
@@ -13,8 +13,17 @@ slides.pdf:  slides.tex refs.bib
     pdflatex -shell-escape -file-line-error -halt-on-error slides.tex
 }
 
+slides_wide.pdf:  slides_wide.tex refs.bib WeSTpresentation.cls
+{
+    rm -rf *.aux *.lo? *.out *.bbl *.brf *.blg *.nl? *.ilg *.toc *.bcf *.nav *.run.xml *.snm
+    pdflatex -shell-escape -file-line-error -halt-on-error slides_wide.tex
+    biber slides_wide
+    pdflatex -shell-escape -file-line-error -halt-on-error slides_wide.tex
+    pdflatex -shell-escape -file-line-error -halt-on-error slides_wide.tex
+}
+
 @clear:
 {
     rm -rf *.aux *.lo? *.out *.bbl *.brf *.blg *.nl? *.ilg *.toc *.bcf *.nav *.run.xml *.snm
-    rm -rf slides.pdf
+    rm -rf slides.pdf slides_wide.pdf
 }

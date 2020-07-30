@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{WeSTpresentation}[2016/04/03 v1.0 WeSTpresentation]
+\ProvidesClass{WeSTpresentation}[2020/07/30 v1.1 WeSTpresentation]
 
 % ==============================================================================
 % Document Class
@@ -153,7 +153,7 @@
         \hspace{1em}\WeSTheadline%
       }%
     \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd = .17\paperwidth, ht = .4cm, center]{section in head/foot}%
+    \begin{beamercolorbox}[wd = .165\paperwidth, ht = .4cm, right]{section in head/foot}%
       \vspace{.05cm}%
       \includegraphics[height = .4cm]{logo_west_small}%
     \end{beamercolorbox}%

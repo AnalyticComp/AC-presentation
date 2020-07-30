@@ -15,16 +15,22 @@ Or simply install vanilla TeXLive (recommended).
 
 ## Usage
 
-Have a look at the [slides.tex](slides.tex) file for how to use this class.
+Have a look at the [slides.tex](slides.tex) or [slides_wide.tex](slides_wide.tex) file for how to use this class.
 
-The code can be build using pdfLaTeX or luaLaTeX.
-For compilation [stu](https://github.com/kunegis/stu) is recommended, if
-you have it installed you just have to perform:
+The code can be build using `pdfLaTeX` or `luaLaTeX`, for instance
 
-    stu
+    pdflatex -shell-escape -file-line-error -halt-on-error slides.tex
+    biber slides
+    pdflatex -shell-escape -file-line-error -halt-on-error slides.tex
+    pdflatex -shell-escape -file-line-error -halt-on-error slides.tex
 
-Of course you can also compile this class by calling `pdflatex` or `lualatex` manually.
+or
 
+    pdflatex -shell-escape -file-line-error -halt-on-error slides_wide.tex
+    biber slides
+    pdflatex -shell-escape -file-line-error -halt-on-error slides_wide.tex
+    pdflatex -shell-escape -file-line-error -halt-on-error slides_wide.tex
+    
 ## Changelog
 
 - 2018-12-12
@@ -35,10 +41,7 @@ Now also supports pdfLaTeX (default).
 
 Now it passes options to the base class `beamer`. For instance use `aspectratio=169` to set the ratio to 16:9.
 
-## ToDo
-
-There is a lot left to be done before this thing can be considered stable,
-pull requests are always welcome.
+## TODOs
 
 Bugs:
 

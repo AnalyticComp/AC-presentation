@@ -4,7 +4,7 @@
 
 @all: slides.pdf slides_wide.pdf;
 
-slides.pdf:  slides.tex refs.bib WeSTpresentation.cls
+slides.pdf:  slides.tex refs.bib ACpresentation.cls
 {
     rm -rf *.aux *.lo? *.out *.bbl *.brf *.blg *.nl? *.ilg *.toc *.bcf *.nav *.run.xml *.snm
     pdflatex -shell-escape -file-line-error -halt-on-error slides.tex
@@ -13,7 +13,7 @@ slides.pdf:  slides.tex refs.bib WeSTpresentation.cls
     pdflatex -shell-escape -file-line-error -halt-on-error slides.tex
 }
 
-slides_wide.pdf:  slides_wide.tex refs.bib WeSTpresentation.cls
+slides_wide.pdf:  slides_wide.tex refs.bib ACpresentation.cls
 {
     rm -rf *.aux *.lo? *.out *.bbl *.brf *.blg *.nl? *.ilg *.toc *.bcf *.nav *.run.xml *.snm
     pdflatex -shell-escape -file-line-error -halt-on-error slides_wide.tex

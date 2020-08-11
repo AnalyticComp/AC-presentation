@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{WeSTpresentation}[2020/07/30 v1.1 WeSTpresentation]
+\ProvidesClass{ACpresentation}[2020/08/10 v1.0 ACpresentation]
 
 % ==============================================================================
 % Document Class
@@ -55,6 +55,10 @@
 
 % Source Code Listings
 \RequirePackage{listings}
+
+% tikz
+\RequirePackage{tikz}
+\usetikzlibrary{fadings}
 
 % Bibliography.
 \RequireOptionsPackage[
@@ -114,48 +118,49 @@
 
 % Colors -----------------------------------------------------------------------
 
-\definecolor{WeSTblue}{HTML}{0C3875}
-\definecolor{WeSTorange}{HTML}{FFAE00}
-\definecolor{WeSTred}{HTML}{DD4814}
-\definecolor{WeSTgray}{HTML}{D9D9D9}
+\definecolor{ACblue}{HTML}{0C3875}
+\definecolor{ACorange}{HTML}{FFAE00}
+\definecolor{ACred}{HTML}{DD4814}
+\definecolor{ACgray}{HTML}{D9D9D9}
+\definecolor{ACcyan}{HTML}{21BFFC}
 
-\usecolortheme[named = WeSTblue]{structure} % General theme color.
-\setbeamercolor{mini frame}{fg=WeSTblue} % Color of bullets in navigation bar
-\setbeamercolor{lower separation line head}{bg = WeSTorange}
-\setbeamercolor{lower separation line head 2}{bg = WeSTgray}
-\setbeamercolor{footline}{fg = black, bg = WeSTgray} % Colors of footline.
+\usecolortheme[named = ACblue]{structure} % General theme color.
+\setbeamercolor{mini frame}{fg=ACblue} % Color of bullets in navigation bar
+\setbeamercolor{lower separation line head}{bg = ACcyan}
+\setbeamercolor{lower separation line head 2}{bg = ACgray}
+\setbeamercolor{footline}{fg = black, bg = ACgray} % Colors of footline.
 \setbeamercolor{author in head/foot}{parent = footline}
 \setbeamercolor{date in head/foot}{parent = footline}
-\setbeamercolor{framenumber in head/foot}{parent = footline, fg = white, bg = WeSTorange} % Accentuate framenumber by color.
-\setbeamercolor{alerted text}{fg = WeSTred} % Color of alerted text.
-\setbeamercolor{section in toc}{fg = WeSTblue} % Color of outline numbers.
-\setbeamercolor{subsection in toc}{fg = WeSTblue} % Color of outline numbers.
-\setbeamercolor{block title}{fg = WeSTblue} % Color of block titles.
-% \setbeamercolor{block title example}{fg = WeSTblue} % Color of block titles of examples.
+\setbeamercolor{framenumber in head/foot}{parent = footline, fg = white, bg = ACcyan} % Accentuate framenumber by color.
+\setbeamercolor{alerted text}{fg = ACred} % Color of alerted text.
+\setbeamercolor{section in toc}{fg = ACblue} % Color of outline numbers.
+\setbeamercolor{subsection in toc}{fg = ACblue} % Color of outline numbers.
+\setbeamercolor{block title}{fg = ACblue} % Color of block titles.
+% \setbeamercolor{block title example}{fg = ACblue} % Color of block titles of examples.
 \hypersetup{
   colorlinks, % Colorize links.
-  urlcolor = WeSTblue, % Color for extern url links.
-  linkcolor = WeSTblue, % Color for intern links like "Section 2".
-  citecolor = WeSTblue, % Color for links in citations.
+  urlcolor = ACblue, % Color for extern url links.
+  linkcolor = ACblue, % Color for intern links like "Section 2".
+  citecolor = ACblue, % Color for links in citations.
 }
 
 % Normal Frame -----------------------------------------------------------------
 
 % Headline.
-\let\WeSTheadline\relax
-\defbeamertemplate{headline}{WeSTnormal}{%
+\let\ACheadline\relax
+\defbeamertemplate{headline}{ACnormal}{%
   \hbox{%
     \begin{beamercolorbox}[wd = .83\paperwidth, ht = .4cm]{section in head/foot}
-      \ifundef{\WeSTheadline}{%
+      \ifundef{\ACheadline}{%
         \insertnavigation{.83\paperwidth}\vskip2pt%
       }{%
         \vspace{.18cm}%
-        \hspace{1em}\WeSTheadline%
+        \hspace{1em}\ACheadline%
       }%
     \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd = .165\paperwidth, ht = .4cm, right]{section in head/foot}%
+    \begin{beamercolorbox}[wd = .20\paperwidth, ht = .5cm, center]{section in head/foot}%
       \vspace{.05cm}%
-      \includegraphics[height = .4cm]{logo_west_small}%
+      \includegraphics[height = .5cm]{logo_ac}%
     \end{beamercolorbox}%
   }%
   \begin{beamercolorbox}[colsep=.7pt]{lower separation line head}%
@@ -165,16 +170,16 @@
 }
 
 % Footline.
-\newcommand*\WeSTfootlineLeft{\insertshortauthor}
-\newcommand*\WeSTfootlineCenter{\insertshortdate}
-\defbeamertemplate{footline}{WeSTnormal}{%
+\newcommand*\ACfootlineLeft{\insertshortauthor}
+\newcommand*\ACfootlineCenter{\insertshortdate}
+\defbeamertemplate{footline}{ACnormal}{%
   \leavevmode%
   \hbox{%
     \begin{beamercolorbox}[wd = .40\paperwidth, ht = 2.25ex, dp = 1ex, left]{author in head/foot}%
-      \hspace{1em}\usebeamerfont{author in head/font}\WeSTfootlineLeft
+      \hspace{1em}\usebeamerfont{author in head/font}\ACfootlineLeft
     \end{beamercolorbox}%
     \begin{beamercolorbox}[wd = .20\paperwidth, ht = 2.25ex, dp = 1ex, center]{date in head/foot}%
-      \usebeamerfont{date in head/font}\WeSTfootlineCenter
+      \usebeamerfont{date in head/font}\ACfootlineCenter
     \end{beamercolorbox}%
     \begin{beamercolorbox}[wd = .23\paperwidth, ht = 2.25ex, dp = 1ex, right]{author in head/foot}%
     \end{beamercolorbox}%
@@ -187,8 +192,8 @@
 
 % Define normal frame style.
 \BeforeBeginEnvironment{frame}{%
-  \setbeamertemplate{headline}[WeSTnormal]%
-  \setbeamertemplate{footline}[WeSTnormal]
+  \setbeamertemplate{headline}[ACnormal]%
+  \setbeamertemplate{footline}[ACnormal]
   \setbeamertemplate{frametitle}[default]
 }
 
@@ -196,35 +201,38 @@
 % This frame style is used for title and section pages.
 
 % Headline.
-\defbeamertemplate{headline}{WeSTfancy}{%
-  \includegraphics[width = \paperwidth]{bg}
+\defbeamertemplate{headline}{ACfancy}{%
+\begin{tikzpicture}
+\path (0,0) rectangle (\paperwidth,\paperheight);
+\node[scope fading=south,inner sep=0pt,outer sep=0pt,anchor=north east] at(\paperwidth,\paperheight) {\includegraphics[width = \paperwidth]{bg}};
+\end{tikzpicture}
 }
 
 % Footline.
-\defbeamertemplate{footline}{WeSTfancy}{%
+\defbeamertemplate{footline}{ACfancy}{%
   \vspace{-1.7cm}
-  {\begin{center}\includegraphics[width = 0.33\paperwidth]{logo_west}\end{center}}%
+  {\begin{center}\includegraphics[width = 0.33\paperwidth]{logo_ac}\end{center}}%
   \vspace{-.2cm}
   \leavevmode%
   \hbox{%
-    \begin{beamercolorbox}[wd = \paperwidth, ht = 2.25ex, dp = 1ex, right]{footline}%
+    \begin{beamercolorbox}[wd = \paperwidth, ht = 2.25ex, dp = 1ex, right]{white}%
     \end{beamercolorbox}%
   }%
   \vskip0pt%
 }
 
 % Frame Title.
-\defbeamertemplate{frametitle}{WeSTfancy}{%
+\defbeamertemplate{frametitle}{ACfancy}{%
   \vspace{2.3cm} % Move title down to account for fancy headline.
   \setbeamertemplate{frametitle}[default][center] % Center title.
   \usebeamertemplate***{frametitle}
 }
 
 % Define fancy frame style.
-\define@key{beamerframe}{WeSTfancy}[true]{%
-  \setbeamertemplate{headline}[WeSTfancy]%
-  \setbeamertemplate{footline}[WeSTfancy]%
-  \setbeamertemplate{frametitle}[WeSTfancy]
+\define@key{beamerframe}{ACfancy}[true]{%
+  \setbeamertemplate{headline}[ACfancy]%
+  \setbeamertemplate{footline}[ACfancy]%
+  \setbeamertemplate{frametitle}[ACfancy]
 }
 
 % Title Page -------------------------------------------------------------------
@@ -368,18 +376,18 @@
 
 % Make line numbers gray and remove ugly colon (:) behind them
 \algrenewcommand{\alglinenumber}[1]{%
-  \color{WeSTgray}\tiny#1%
+  \color{ACgray}\tiny#1%
 }
 
 % Make comments gray
 \algrenewcomment[1]{%
-  \hfill\textcolor{WeSTblue}{\(\triangleright\) #1}%
+  \hfill\textcolor{ACblue}{\(\triangleright\) #1}%
 }
 
 % Add single line comment
 % http://tex.stackexchange.com/a/74885/75225
 \algnewcommand{\LineComment}[1]{%
-  \State \textcolor{WeSTblue}{\(\triangleright\) #1}%
+  \State \textcolor{ACblue}{\(\triangleright\) #1}%
 }
 
 % Style for keywords
@@ -414,9 +422,9 @@
   showspaces = false,
   showstringspaces = false,
   basicstyle = \footnotesize\ttfamily,
-  numberstyle = \tiny\color{WeSTgray},
-  commentstyle = \color{WeSTblue},
-  keywordstyle = \color{WeSTred},
-  stringstyle = \color{WeSTorange},
+  numberstyle = \tiny\color{ACgray},
+  commentstyle = \color{ACblue},
+  keywordstyle = \color{ACred},
+  stringstyle = \color{ACcyan},
   numbersep = 1em,
 }

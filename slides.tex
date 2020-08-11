@@ -1,23 +1,23 @@
 % Enable warnings about problematic code
 \RequirePackage[l2tabu,orthodox]{nag}
 
-\documentclass{WeSTpresentation}
+\documentclass{ACpresentation}
 
 \newcommand*\mailto[1]{\href{mailto:#1}{\nolinkurl{#1}}}
 
-\title{An Example of a WeST-Presentation}
-\subtitle{Using the \texttt{WeSTpresentation} Class}
+\title{An Example of an AC-Presentation}
+\subtitle{Using the \texttt{ACpresentation} Class}
 \author{John Doe}
 \institute{
-  Institute for Web Science and Technologies\\
-  University of Koblenz-Landau\\
-  \texttt{\mailto{johndoe@uni-koblenz.de}}
+  Analytic Computing\\
+  University of Stuttgart\\
+  \texttt{\mailto{johndoe@ipvs.uni-stuttgart.de}}
 }
 \date{\today}
 
 % If you don't want your name resp. the date in the footline, uncomment this:
-%\renewcommand*\WeSTfootlineLeft{left footline content}
-%\renewcommand*\WeSTfootlineCenter{center footline content}
+%\renewcommand*\ACfootlineLeft{left footline content}
+%\renewcommand*\ACfootlineCenter{center footline content}
 
 \ifluatex
     % Set langauge of text.
@@ -32,7 +32,7 @@
 % Show section title frame at the start of each section.
 \AtBeginSection{%
   \miniframesoff%
-  \begin{frame}[WeSTfancy]%
+  \begin{frame}[ACfancy]%
     \sectionpage%
   \end{frame}%
   \miniframeson}
@@ -40,7 +40,7 @@
 % Show subsection title frame at the start of each subsection.
 \AtBeginSubsection{%
   \miniframesoff%
-  \begin{frame}[WeSTfancy]%
+  \begin{frame}[ACfancy]%
     \subsectionpage%
   \end{frame}%
   \miniframeson}
@@ -51,15 +51,15 @@
 \begin{document}
 
 \miniframesoff % Don't show Titlepage and ToC in navigation bar.
-\begin{frame}[WeSTfancy]
+\begin{frame}[ACfancy]
   \titlepage
 \end{frame}
 
-\newcommand*\WeSTheadline{} % Disable navigation bar for outline.
+\newcommand*\ACheadline{} % Disable navigation bar for outline.
 \begin{frame}{Outline}
   \tableofcontents
 \end{frame}
-\let\WeSTheadline\relax % Re-enable navigation bar for outline.
+\let\ACheadline\relax % Re-enable navigation bar for outline.
 \miniframeson % Show following slides in navigation bar again.
 
 % ==============================================================================
@@ -157,7 +157,7 @@
 \end{frame}
 
 \miniframesoff % Don't show the thank you slide in navigation bar.
-\begin{frame}[WeSTfancy]{Thank you for your Attention!}
+\begin{frame}[ACfancy]{Thank you for your Attention!}
   \begin{center}
     \insertauthor
   \end{center}

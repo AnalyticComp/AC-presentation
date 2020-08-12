@@ -17,7 +17,7 @@ Or simply install vanilla TeXLive (recommended).
 
 Have a look at the [slides.tex](slides.tex) or [slides_wide.tex](slides_wide.tex) file for how to use this class.
 
-The code can be build using `pdfLaTeX` or `luaLaTeX`, for instance
+The code can be build using `pdflatex` or `lualatex`, for instance
 
     pdflatex -shell-escape -file-line-error -halt-on-error slides.tex
     biber slides
@@ -26,10 +26,10 @@ The code can be build using `pdfLaTeX` or `luaLaTeX`, for instance
 
 or
 
-    pdflatex -shell-escape -file-line-error -halt-on-error slides_wide.tex
+    lualatex -shell-escape -file-line-error -halt-on-error slides_wide.tex
     biber slides
-    pdflatex -shell-escape -file-line-error -halt-on-error slides_wide.tex
-    pdflatex -shell-escape -file-line-error -halt-on-error slides_wide.tex
+    lualatex -shell-escape -file-line-error -halt-on-error slides_wide.tex
+    lualatex -shell-escape -file-line-error -halt-on-error slides_wide.tex
     
 Alternatively one can use [stu](https://github.com/kunegis/stu) to compile it.
 

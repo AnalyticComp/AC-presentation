@@ -49,6 +49,10 @@ Now it passes options to the base class `beamer`. For instance use `aspectratio=
 
 Adapt for AC.
 
+- 2020-08-14
+
+Add the university logo, add PowerPoint templates.
+
 ## TODOs
 
 Bugs:

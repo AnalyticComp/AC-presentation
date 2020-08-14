@@ -211,7 +211,13 @@
 % Footline.
 \defbeamertemplate{footline}{ACfancy}{%
   \vspace{-1.7cm}
-  {\begin{center}\includegraphics[width = 0.33\paperwidth]{logo_ac}\end{center}}%
+  {
+    \begin{center}
+      \includegraphics[height = 0.08\paperwidth]{logo_ac}
+      \hspace{1cm}
+      \includegraphics[height = 0.08\paperwidth]{logo_uni}
+    \end{center}
+  }%
   \vspace{-.2cm}
   \leavevmode%
   \hbox{%
